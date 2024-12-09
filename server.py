@@ -3,6 +3,7 @@
 from time import time
 import asyncio, socket
 import ssl
+import argparse
 
 from modbus_exception import modbus_exception
 from modbus_functions import func_dict
@@ -246,7 +247,11 @@ class modbus_tls_server(modbus_server):
 
 
 if __name__ == '__main__':
-    server = modbus_server()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host", help="Specifies the TCP/IP address on which the server is to listen for connections from clients. The default value is 127.0.0.1", default="127.0.0.1")
+    parser.add_argument("--port", type=int, help="The TCP port the server listens on; 5020 by default.", default=5020)
+    args = parser.parse_args()
+    server = modbus_server(args.host, args.port)
     print("MODBUS server listens on {}:{}".format(server.host, server.port))
     server.run()
     print("MODBUS server closed")

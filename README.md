@@ -34,7 +34,6 @@ Run the following command to stop the application.
 docker compose down
 ```
 
-
 ## Impelemented Functions
 
 1. Read Coils

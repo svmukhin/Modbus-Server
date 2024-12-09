@@ -12,6 +12,29 @@ Make sure the Python is version 3.7 or newer.
 
 The default listening port is **5020**.
 
+## Execute in container
+
+Make sure that You have installed the latest version of [Docker Desktop](https://docs.docker.com/get-started/get-docker/).
+
+Run the following command in a terminal.
+
+```sh
+docker compose up --build
+```
+
+You can run the application detached from the terminal by adding the -d option.
+
+```sh
+docker compose up --build -d
+```
+
+Run the following command to stop the application.
+
+```sh
+docker compose down
+```
+
+
 ## Impelemented Functions
 
 1. Read Coils
